@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "server.c"
+#include "interface.h"
 
 int main (int argc, char* argv[] )
 {
@@ -13,11 +13,11 @@ int main (int argc, char* argv[] )
     grades2[i] = atof(argv[i + 19]);
   }
 
-  int check = sortGrades(grades1, grades2);
+  int check = sortGrades(grades1, grades2, size);
 
-  if (check == 0) {
+  if (check == 1) {
     printf ("3rd student from first class has greater greade\n");
-  } else if (check == 1) {
+  } else if (check == 2) {
     printf ("3rd student from second class has greater greade\n");
   } else {
     printf ("same grade\n");
